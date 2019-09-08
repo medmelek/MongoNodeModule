@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const db = require('../db');
 
+db.connect();
+
 router.get('/:name', function(req, res, next) {
 
     db.get().collection('users', function (err, collection) {
